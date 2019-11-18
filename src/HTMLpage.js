@@ -3,7 +3,7 @@ import DashboardWorkspace from './HTMLWorkspace';
 import ButtonPrompt from './ButtonPrompt';
 import Button from './Button';
 import Draggable from 'react-draggable';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import LineGraph from './LineGraph';
 import GraphPrompt from './GraphPrompt';
 import Graph from './Graph';
 
@@ -33,6 +33,7 @@ export default class Dashboard extends Component{
         this.passwordclick= this.passwordclick.bind(this);
         this.paraclick= this.paraclick.bind(this);
         this.graphclick= this.graphclick.bind(this);
+        this.lgraphclick= this.lgraphclick.bind(this);
     }
     onUpdate = (val) => {
         console.log(val);
@@ -148,13 +149,22 @@ export default class Dashboard extends Component{
         });
         console.log(this.state.componentsArray);
     };
+
+    lgraphclick(){
+        this.setState({
+            componentsArray: this.state.componentsArray.concat(
+                <LineGraph/>
+            )
+        });
+    }
     
     render(){
         return(
             <div className="fixoverflow">
                 <div className="sidebar">
                     <p class="sp">Choose the component you want to add</p>
-                    <button className="importedbutton" color="white" onClick={this.bclick}>Button</button>
+                    <hr style={{color:"white"}}></hr>
+                    <button className="importedbutton" color="white" style={{color:"black"}} onClick={this.bclick}>Button</button>
                     <br/>
                     <button className="shtml shtmlh1"  onClick={this.h1click}>Heading 1</button>
                     <br/>
@@ -170,9 +180,9 @@ export default class Dashboard extends Component{
                     <br/>
                     <button className="shtml" onClick={this.paraclick}>Paragraph</button>
                     <br/>
-                    <button className="" onClick={this.graphclick}><FontAwesomeIcon icon="far fa-chart-bar"></FontAwesomeIcon></button>
+                    <button className="" style={{color:"black"}} onClick={this.graphclick}>Bar Graph</button>
                     <br/>
-                    <button className="" onClick={this.lgraphclick}>Line graph</button>
+                    <button className="" style={{color:"black"}} onClick={this.lgraphclick}>Line graph</button>
                     <br/>
                 </div>
                 {this.state.buttonprompt ?
