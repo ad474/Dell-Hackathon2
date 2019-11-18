@@ -9,6 +9,8 @@ import { data3 } from './Data3';
 import { VictoryBar } from 'victory';
 import { VictoryChart } from 'victory';
 
+import "./App.css";
+
 export default class Graph extends Component{
     constructor(props){
         super(props);
@@ -33,7 +35,7 @@ export default class Graph extends Component{
         if(this.props.color==="data1"){
             return(
                 <Draggable>
-                    <div class="bargraph">
+                    <div class="bargraph pos">
                     <VictoryChart>
                         <VictoryBar
                             data={data1}
@@ -51,7 +53,7 @@ export default class Graph extends Component{
         else if (this.props.color==="data2"){
             return(
                 <Draggable>
-                    <div class="bargraph">
+                    <div class="bargraph pos">
                     <VictoryChart>
                         <VictoryBar
                             data={data2}
@@ -69,7 +71,7 @@ export default class Graph extends Component{
         else{
             return(
                 <Draggable>
-                    <div class="bargraph">
+                    <div class="bargraph pos">
                     <VictoryChart>
                         <VictoryBar
                             data={data3}
@@ -81,7 +83,7 @@ export default class Graph extends Component{
                     </VictoryChart>
                     {/* {this.state.graph}?? */}
                     </div>
-                    </Draggable>
+                </Draggable>
             );
         }
     }

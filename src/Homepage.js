@@ -15,7 +15,6 @@ export default class Homepage extends Component{
             <div>
                 <Link to={`/dashboard/`+this.state.name}>Dashboard</Link>
                 <Link to="/html">HTML Page</Link>
-                <Link to="/blah">Blah</Link>
             </div>
         );
     }
