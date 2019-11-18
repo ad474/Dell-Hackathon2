@@ -1,0 +1,55 @@
+.sidebar{
+    background-color: darkslategrey;
+    width:20%;
+    height:100vh;
+}
+body{
+    margin:0;
+}
+
+.fixoverflow{
+    display:flex;
+}
+.buttonprompt{
+    position: absolute;
+    left:200px;
+    top:50px;
+    height:15%;
+    width:30%;
+    background-color: lightblue;
+    position: fixed;
+        overflow: hidden;
+        z-index: 2400;
+        /* opacity: 0.70; */
+        right: 30px;
+        top: 0px !important;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -ms-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Lobster|Open+Sans&display=swap');
+.greeting{
+    height:150px;
+    width:400px;
+    border:5px solid red;
+    border-radius: 20px;
+    text-align: center;
+}
+.g1{
+    font-size: 2rem;
+    margin-bottom:0;
+    font-family: 'Open Sans', sans-serif;
+}
+.g2{
+    margin-top:0;
+    font-size: 1.5rem;
+    font-family: 'Lobster', cursive;
+}
+
+.bargraph{
+    height:500px;
+    width:500px;
+}
