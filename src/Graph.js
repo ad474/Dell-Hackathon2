@@ -8,6 +8,7 @@ import { data3 } from './Data3';
 
 import { VictoryBar } from 'victory';
 import { VictoryChart } from 'victory';
+import { VictoryTheme } from 'victory';
 
 import "./App.css";
 
@@ -16,7 +17,7 @@ export default class Graph extends Component{
         super(props);
         var x=this.props.color;
         console.log(x);
-        
+
     }
     // setGraph(){
     //     if(this.props.color==='finance'){
@@ -29,7 +30,7 @@ export default class Graph extends Component{
     //         this.setState({graph:data3});
     //     }
     //     console.log(this.state.graph);
-        
+
     // }
     render(){
         if(this.props.color==="data1"){
@@ -55,14 +56,16 @@ export default class Graph extends Component{
                 <Draggable>
                     <div class="bargraph pos">
                     <VictoryChart>
-                        <VictoryBar
-                            data={data2}
-                            // data accessor for x values
-                            x="quarter"
-                            // data accessor for y values
-                            y="earnings"
-                        />
-                    </VictoryChart>
+                    <VictoryBar
+                        data={data2}
+                        // data accessor for x values
+                        x="quarter"
+                        // data accessor for y values
+                        y="earnings"
+                    />
+                </VictoryChart>
+
+
                     {/* {this.state.graph}?? */}
                     </div>
                     </Draggable>

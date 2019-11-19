@@ -15,13 +15,13 @@ export default class Login extends Component{
                         <br/> <br/>
                         <label className = 'lbl'>Username</label>
                         {' '}
-                        <input type = 'text' value={this.state.term} onChange={this.onInputChange}/>
+                        <input type = 'text' value={this.state.term} style={{color:"black"}} onChange={this.onInputChange}/>
                         <br/> <br/>
                         <label className = 'lbl'>Password</label>
                         {' '}
-                        <input type = 'password'/>
+                        <input type = 'password' style={{color:"black"}}/>
                         <br/> <br/><br/>
-                        <Link to={`route/`+this.state.term}>My route</Link>
+                        <Link to={`route/`+this.state.term}><button className="myButton">Login</button></Link>
                         {/* <Link to="/homepage/ankita" params={{ testvalue: "hello" }}>Login</Link> */}
                         <br/>
                         {/* <button className = 'siBtn' onClick={this.buttonclick}> Sign In </button> */}

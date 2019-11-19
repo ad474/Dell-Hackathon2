@@ -5,14 +5,14 @@ import DashboardWorkspace from './DashboardWorkspace';
 import Greeting from './Greeting';
 import '../node_modules/react-vis/dist/style.css';
 import LineGraph from './LineGraph';
-import Navigation from '@bit/komaltalwar.trial.navigation';
-import TitleList from '@bit/komaltalwar.trial.title-list';
-import Item from '@bit/komaltalwar.trial.item';
-import Logo from '@bit/komaltalwar.trial.logo';
-import UserProfile from '@bit/komaltalwar.trial.user-profile';
-import HeroButton from '@bit/komaltalwar.trial.hero-button';
-import ListToggle from '@bit/komaltalwar.trial.list-toggle';
-import Hero from  '@bit/komaltalwar.trial.hero';
+import Navigation from './Navigation';
+import TitleList from './TitleList';
+import Item from './Item';
+import Logo from './Logo';
+import UserProfile from './UserProfile';
+import HeroButton from './HeroButton';
+// import ListToggle from './ListToggle';
+import Hero from  './Hero';
 // import Draggable from 'react-draggable';
 
 // import { data } from './Data1.js';
@@ -30,38 +30,42 @@ export default class Dashboard extends Component{
             name:id
         }
 
-        console.log("HERE"+id);
-
-        this.onUpdate=this.onUpdate.bind(this);
-        this.bclick = this.bclick.bind(this);
         this.greetclick= this.greetclick.bind(this);
+        this.navigation= this.navigation.bind(this);
+        this.titlelist= this.titlelist.bind(this);
+        this.item= this.item.bind(this);
+        this.logo= this.logo.bind(this);
+        this.userprofile= this.userprofile.bind(this);
+        this.herobutton= this.herobutton.bind(this);
+        // this.listtoggle= this.listtoggle.bind(this);
+        this.hero= this.hero.bind(this);
     }
-    onUpdate = (val) => {
-        console.log(val);
-        this.setState({
-          fieldVal: val
-        })
-        this.setState({
-            buttonprompt:false
-        });
-         this.setState({
-            componentsArray: this.state.componentsArray.concat(
-                <Graph color={val}/>
-            )
-        });
-        console.log(this.state.componentsArray);
-    };
-    bclick(){
-        this.setState({
-            buttonprompt:true
-        });
-        // this.setState({
-        //     componentsArray: this.state.componentsArray.concat(
-        //         <Button/>
-        //     )
-        // });
-        // console.log(this.state.componentsArray);
-    }
+    // onUpdate = (val) => {
+    //     console.log(val);
+    //     this.setState({
+    //       fieldVal: val
+    //     })
+    //     this.setState({
+    //         buttonprompt:false
+    //     });
+    //      this.setState({
+    //         componentsArray: this.state.componentsArray.concat(
+    //             <Graph color={val}/>
+    //         )
+    //     });
+    //     console.log(this.state.componentsArray);
+    // };
+    // bclick(){
+    //     this.setState({
+    //         buttonprompt:true
+    //     });
+    //     // this.setState({
+    //     //     componentsArray: this.state.componentsArray.concat(
+    //     //         <Button/>
+    //     //     )
+    //     // });
+    //     // console.log(this.state.componentsArray);
+    // }
     greetclick(){
         this.setState({
             componentsArray: this.state.componentsArray.concat(
@@ -70,14 +74,77 @@ export default class Dashboard extends Component{
         });
         console.log(this.state.componentsArray);
     }
-
+    navigation(){
+      this.setState({
+          componentsArray: this.state.componentsArray.concat(
+            <Navigation/>
+          )
+      });
+    }
+    titlelist(){
+      this.setState({
+          componentsArray: this.state.componentsArray.concat(
+            <TitleList/>
+          )
+      });
+    }
+    item(){
+      this.setState({
+          componentsArray: this.state.componentsArray.concat(
+            <Item/>
+          )
+      });
+    }
+    logo(){
+      this.setState({
+          componentsArray: this.state.componentsArray.concat(
+            <Logo/>
+          )
+      });
+    }
+    userprofile(){
+      this.setState({
+          componentsArray: this.state.componentsArray.concat(
+            <UserProfile name={this.state.name}/>
+          )
+      });
+    }
+    herobutton(){
+      this.setState({
+          componentsArray: this.state.componentsArray.concat(
+            <HeroButton/>
+          )
+      });
+    }
+    // listtoggle(){
+    //   this.setState({
+    //       componentsArray: this.state.componentsArray.concat(
+    //         <ListToggle />
+    //       )
+    //   });
+    // }
+    hero(){
+      this.setState({
+          componentsArray: this.state.componentsArray.concat(
+            <Hero/>
+          )
+      });
+    }
     render(){
 
         return(
             <div className="fixoverflow">
                 <div className="sidebar">
-                    <button onClick={this.bclick}>Graph</button>
-                    <button onClick={this.greetclick}>Greeting</button>
+
+                    <button className="dbuttons" onClick={this.greetclick}>Greeting</button>
+                    <button className="dbuttons" onClick={this.navigation}>Navigation</button>
+                    <button className="dbuttons" onClick={this.titlelist}>Title List</button>
+                    <button className="dbuttons" onClick={this.item}>Item</button>
+                    <br/>
+                    <button className="dbuttons" onClick={this.logo}>Logo</button>
+                    <button className="dbuttons" onClick={this.userprofile}>User Profile</button>
+                    <button className="dbuttons" onClick={this.herobutton}>Hero Button</button>
+                    <button className="dbuttons" onClick={this.hero}>Hero</button>
                     <br/>
                 </div>
                 {this.state.buttonprompt ?
@@ -85,34 +152,6 @@ export default class Dashboard extends Component{
                     null
                 }
                 <DashboardWorkspace rendercomponents={this.state.componentsArray}/>
-                <Navigation
-   links={[
-     { label: 'Browse', href: 'http://browse.to.somewhere' },
-     { label: 'My List', href: '/my-list' },
-     { label: 'Top Picks', href: '/top' },
-     { label: 'Recent', href: '/recent' }
-   ]}
-/>
-<TitleList
-   title="Trending now"
-   url="discover/movie?sort_by=popularity.desc&page=1"
-/>
-<Item
-  title='Demo List Item'
-  rating={6}
-  overview='This demo item brought you by the Bit team'
-  backdrop='http://image.tmdb.org/t/p/original/aok7IhrbA83josNz9Dqh8tNA0Ao.jpg'
-/>
-<Logo />
-<UserProfile
-   username={"Ela loveface"}
-/>
-<HeroButton text="I'm a Hero!" primary />
-<ListToggle />
-<Hero
-  title="Season 66 will be available soon!"
-  description="Lorem ipsum dolor sit amet hey! id quam sapiente unde voluptatum alias vero debitis, magnam quis quod."
-/>
             </div>
         );
     }

@@ -22,7 +22,7 @@ export default class Dashboard extends Component{
             name:id,
             graphprompt:false
         }
-        
+
         this.onUpdate=this.onUpdate.bind(this);
         this.bclick = this.bclick.bind(this);
         this.h1click= this.h1click.bind(this);
@@ -157,7 +157,7 @@ export default class Dashboard extends Component{
             )
         });
     }
-    
+
     render(){
         return(
             <div className="fixoverflow">
@@ -176,9 +176,9 @@ export default class Dashboard extends Component{
                     <br/>
                     <button className="shtml" onClick={this.inputclick}>Input field</button>
                     <br/>
-                    <button className="shtml mb" onClick={this.passwordclick}>Password</button>
+                    <button className="shtml " onClick={this.passwordclick}>Password</button>
                     <br/>
-                    <button className="shtml" onClick={this.paraclick}>Paragraph</button>
+                    <button className="shtml mb" onClick={this.paraclick}>Paragraph</button>
                     <br/>
                     <button className="" style={{color:"black"}} onClick={this.graphclick}>Bar Graph</button>
                     <br/>
@@ -194,8 +194,8 @@ export default class Dashboard extends Component{
                     null
                 }
                 <DashboardWorkspace rendercomponents={this.state.componentsArray}/>
-                
-            </div> 
+
+            </div>
         );
     }
 }

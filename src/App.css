@@ -38,20 +38,20 @@ body{
 
 @import url('https://fonts.googleapis.com/css?family=Lobster|Open+Sans&display=swap');
 .greeting{
-    height:150px;
-    width:400px;
+    height:100px;
+    width:200px;
     border:5px solid red;
     border-radius: 20px;
     text-align: center;
 }
 .g1{
-    font-size: 2rem;
+    font-size: 1.2rem;
     margin-bottom:0;
     font-family: 'Open Sans', sans-serif;
 }
 .g2{
     margin-top:0;
-    font-size: 1.5rem;
+    font-size: 0.8rem;
     font-family: 'Lobster', cursive;
 }
 
@@ -64,7 +64,7 @@ body{
     height:60px;
     width:130px;
     border-radius: 20px;
-    font-size:2rem;
+    font-size:1rem;
     font-family: 'Open Sans', sans-serif;
     /* border:2px solid black; */
     box-shadow: 5px 10px 8px #888888;
@@ -77,7 +77,8 @@ body{
 }
 
 .bpp{
-    font-size: 2rem;
+    font-size: 1rem;
+    color:black;
     font-family: 'Open Sans', sans-serif;
     margin-top:10px;
 }
@@ -97,7 +98,7 @@ body{
 
 .sp{
     font-family: 'Open Sans', sans-serif;
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
 .htmlh1{
@@ -122,7 +123,7 @@ body{
     border: none;
     padding: 0;
     /*optional*/
-    font-size: 2rem;
+    font-size: 1rem;
     /*input has OS specific font-family*/
     text-decoration: underline;
     cursor: pointer;
@@ -156,6 +157,7 @@ body{
 
 .mb{
     margin-bottom:30px;
+    margin-top:30px;
 }
 
 .gbutton{
@@ -168,7 +170,7 @@ body{
     width: 350px;
     height:500px;
     padding-top: 100px;
-    margin-top: 150px;
+    margin-top: 100px;
     margin-left:80px;
     margin-right:0;
     border:5px ridge;
@@ -179,7 +181,7 @@ body{
    width: 350px;
    height:500px;
    padding-top: 100px;
-   margin-top: 150px;
+   margin-top: 100px;
    margin-left:150px;
    margin-right:50px;
    border:5px ridge;
@@ -190,7 +192,7 @@ body{
     width:180px;
     height:130px;
     padding-left:40px;
-    padding-right:10px; 
+    padding-right:10px;
     margin-left:60px;
     margin-top:40px;
 }
@@ -198,4 +200,37 @@ body{
 .heading_homepage{
    font-family: 'Merriweather', serif;
    color:white;
+}
+
+.titlelist{
+  width:40%;
+  height:20%;
+}
+body{
+  background-color: white;
+}
+
+.dbuttons {
+	box-shadow: 0px 10px 14px -7px #276873;
+	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+	background-color:#599bb3;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	padding:13px 32px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #3d768a;
+  margin:5px;
+}
+.dbuttons:hover {
+	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+	background-color:#408c99;
+}
+.dbuttons:active {
+	position:relative;
+	top:1px;
 }
