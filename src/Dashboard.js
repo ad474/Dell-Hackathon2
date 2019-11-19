@@ -1,10 +1,8 @@
 import React,{Component} from 'react';
 import GraphPrompt from './GraphPrompt';
-import Graph from './Graph';
 import DashboardWorkspace from './DashboardWorkspace';
 import Greeting from './Greeting';
 import '../node_modules/react-vis/dist/style.css';
-import LineGraph from './LineGraph';
 import Navigation from './Navigation';
 import TitleList from './TitleList';
 import Item from './Item';

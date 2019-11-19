@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 import './App.css';
- 
+
 export default class DashboardWorkspace extends Component{
     render(){
         return(
+          <div contenteditable="true">
             <div class="fixoverflow">
-                <p>{this.props.rendercomponents}</p>
+                {this.props.rendercomponents}
+            </div>
             </div>
         );
     }

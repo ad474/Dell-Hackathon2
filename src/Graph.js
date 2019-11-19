@@ -8,7 +8,6 @@ import { data3 } from './Data3';
 
 import { VictoryBar } from 'victory';
 import { VictoryChart } from 'victory';
-import { VictoryTheme } from 'victory';
 
 import "./App.css";
 
